@@ -21,4 +21,17 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    default: 'blank',
+    values: [
+      {
+        name: 'blank',
+        value: '#ffffff',
+      },
+      {
+        name: 'primary',
+        value: '#6e41e2',
+      },
+    ],
+  },
 };
