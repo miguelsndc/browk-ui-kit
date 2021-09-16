@@ -5,10 +5,10 @@ type BadgeProps = {
   variant: 'white' | 'primary' | 'secondary';
 };
 
-export const Badge = ({ text, variant = 'primary' }: BadgeProps) => {
+export default function Badge({ text, variant = 'primary' }: BadgeProps) {
   return (
     <Wrapper variant={variant}>
       <span>{text}</span>
     </Wrapper>
   );
-};
+}

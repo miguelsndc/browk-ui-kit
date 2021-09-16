@@ -5,32 +5,29 @@ type WrapperProps = {
 };
 
 export const Wrapper = styled.div<WrapperProps>`
-  padding: 1px 0.5rem;
+  padding: 2px 0.7rem;
   border-radius: 100px;
   display: inline-block;
 
   font: ${({ theme }) => theme.fonts.P3RegularRobotoBold};
 
-  ${({ variant, theme }) =>
-    variant === 'white' &&
-    css`
-      background: ${theme.colors.white};
-      color: ${theme.colors.primary};
+  ${({ variant }) => variant === 'white' && WhiteVariantStyles}
+  ${({ variant }) => variant === 'primary' && PrimaryVariantStyles}
+  ${({ variant }) => variant === 'secondary' && SecondaryVariantStyles};
+`;
 
-      box-shadow: ${theme.shadows.default};
-    `}
+const WhiteVariantStyles = css`
+  background: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary};
+  box-shadow: ${({ theme }) => theme.shadows.default};
+`;
 
-  ${({ variant, theme }) =>
-    variant === 'primary' &&
-    css`
-      background: ${theme.colors.primary};
-      color: ${theme.colors.white};
-    `}
+const PrimaryVariantStyles = css`
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
+`;
 
-  ${({ variant, theme }) =>
-    variant === 'secondary' &&
-    css`
-      border: 1px solid ${theme.colors.primary};
-      color: ${theme.colors.primary};
-    `};
+const SecondaryVariantStyles = css`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
 `;

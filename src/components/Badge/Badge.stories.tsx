@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Badge } from './index';
+import Badge from './index';
 
 export default {
   title: 'Components/Badge',
@@ -25,4 +25,10 @@ export const White = Template.bind({});
 White.args = {
   variant: 'white',
   text: 'Your text',
+};
+
+export const BigText = Template.bind({});
+BigText.args = {
+  variant: 'primary',
+  text: 'Lorem ipsum dolor sit amet lorem ipsum dolor sit',
 };
