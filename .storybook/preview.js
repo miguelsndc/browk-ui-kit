@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '@storybook/addon-console';
+
 import { GlobalStyles } from '../src/styles/globals';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/styles/theme';
