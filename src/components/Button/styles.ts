@@ -53,6 +53,10 @@ const Primary = css`
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.white};
 
+  svg path {
+    fill: ${({ theme }) => theme.colors.white};
+  }
+
   transition: all 0.2s;
 
   :hover {
@@ -79,6 +83,10 @@ const PrimaryWhite = css`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.primary};
 
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+
   transition: all 0.2s;
 
   :hover {
@@ -102,6 +110,10 @@ const Secondary = css`
   color: ${({ theme }) => theme.colors.primary};
   border: 3px solid ${({ theme }) => theme.colors.primary};
   transition: all 0.2s;
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
 
   :hover {
     background: ${({ theme }) => theme.colors.primary}0A;
@@ -127,8 +139,11 @@ const SecondaryWhite = css`
   background: transparent;
   color: ${({ theme }) => theme.colors.white};
   border: 3px solid ${({ theme }) => theme.colors.white};
-
   transition: all 0.2s;
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.white};
+  }
 
   :hover {
     background: ${({ theme }) => theme.colors.white}1f;
@@ -156,6 +171,10 @@ const Flat = css`
 
   transition: all 0.2s;
 
+  svg path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
+
   :hover {
     background: ${({ theme }) => theme.colors.primary}0A;
   }
@@ -181,6 +200,10 @@ const FlatWhite = css`
   color: ${({ theme }) => theme.colors.white};
   transition: all 0.2s;
 
+  svg path {
+    fill: ${({ theme }) => theme.colors.white};
+  }
+
   :hover {
     background: ${({ theme }) => theme.colors.white}1F;
   }
@@ -204,6 +227,10 @@ const SecondaryDark = css`
   background: transparent;
   border: 3px solid ${({ theme }) => theme.colors.black};
   transition: all 0.2s;
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.black};
+  }
 
   :hover {
     background: ${({ theme }) => theme.colors.black}0A;
