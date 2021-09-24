@@ -5,18 +5,11 @@ import checkedIcon from '../../assets/checked.svg';
 
 type Option = string;
 
-type GroupedOptions = {
-  [key: string]: Option[];
-};
-
-// Nested Options : { optionGroup: Option[]} ex: { Country: ['Russia','USA','China'] }
-
 type ContextMenuProps = {
   currentOption: string | null;
   required: boolean;
-  multiple: boolean;
-  options: Option[]; // Não funciona
-  onSelect: Dispatch<SetStateAction<string | null>>;
+  options: Option[];
+  onSelect: Dispatch<SetStateAction<Option | null>>;
 };
 
 export default function ContextMenu({

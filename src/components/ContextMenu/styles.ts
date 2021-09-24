@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.shadows.default};
+  font: ${({ theme }) => theme.fonts.P2RegularRoboto};
 
   transition: box-shadow 0.2s;
 
@@ -22,8 +23,6 @@ export const Option = styled.span`
   cursor: pointer;
 
   transition: background 0.2s;
-
-  font: ${({ theme }) => theme.fonts.P2RegularRoboto};
 
   img {
     font-size: 0;
