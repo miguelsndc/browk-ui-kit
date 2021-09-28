@@ -1,50 +1,55 @@
-import { ChangeEvent, HTMLAttributes, useState } from 'react';
+import { DetailedHTMLProps, InputHTMLAttributes, useState } from 'react';
 
-import { Wrapper } from './styles';
+import { InputBox, Wrapper } from './styles';
 
-type InputTextTypes = 'text' | 'email' | 'password' | 'url' | 'number' | 'tel';
+type InputTextTypes = 'text' | 'email' | 'password';
 
 type TextInputProps = {
-  disabled?: boolean;
-  label: string;
-  errorMessage?: string;
-  success?: boolean;
-  description?: string;
-  type: InputTextTypes;
   id: string;
-} & HTMLAttributes<HTMLInputElement>;
+  type: InputTextTypes;
+  error?: string;
+  label: string;
+  success?: boolean;
+  disabled?: boolean;
+  description?: string;
+  placeholder?: string;
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 export default function TextInput({
-  label,
-  disabled,
-  type,
-  errorMessage,
-  success,
-  description,
   id,
+  type,
+  value,
+  error,
+  label,
+  success,
   onChange,
+  disabled,
+  placeholder,
+  description,
   ...rest
 }: TextInputProps) {
-  const [value, setValue] = useState('');
-
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value);
-    onChange && onChange(e);
-  }
-
   return (
-    <Wrapper shouldDecreaseLabelSize={!!value}>
-      <label htmlFor={id}>{label}</label>
-      <input
-        type={type}
-        disabled={disabled}
-        id={id}
-        {...rest}
-        value={value}
-        onChange={handleChange}
-      />
-      {errorMessage && <span>{errorMessage}</span>}
-      {description && <p>{description}</p>}
+    <Wrapper>
+      <InputBox
+        hasErrors={!!error}
+        isSuccess={success}
+        isDisabled={disabled}
+        userHasTyped={!!value}
+        shouldDecreaseLabelSize={!!(value || placeholder)}
+      >
+        <label htmlFor={id}>{label}</label>
+        <input
+          id={id}
+          type={type}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          placeholder={placeholder}
+          {...rest}
+        />
+      </InputBox>
+      {error && <span>{error}</span>}
+      {!error && description && <p>{description}</p>}
     </Wrapper>
   );
 }
