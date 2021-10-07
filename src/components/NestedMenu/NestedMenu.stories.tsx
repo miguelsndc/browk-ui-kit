@@ -16,8 +16,8 @@ const Template: ComponentStory<typeof NestedMenu> = args => {
 };
 
 const options = {
-  Places: ['dsadsadsadsa', 'UdsSA', 'Dada'],
-  Ddada: ['dsadsadsadsa', 'dsadsa', 'dsdsadsads'],
+  Countries: ['Russia', 'USA', 'China'],
+  Cities: ['New York', 'Moscow', 'Pequim'],
 };
 export const Opened = Template.bind({});
 Opened.args = {

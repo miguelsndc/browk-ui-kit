@@ -17,6 +17,5 @@ const Template: ComponentStory<typeof Toggle> = args => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  checked: false,
   disabled: false,
 };
