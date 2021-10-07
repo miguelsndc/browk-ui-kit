@@ -37,8 +37,6 @@ export default function NestedMenu({
     });
   }
 
-  console.log(currentOptions);
-
   const getDefaultOptions = useCallback(() => {
     const defaultOptions = Object.entries(options as Options)
       .map(option => {
@@ -61,7 +59,7 @@ export default function NestedMenu({
   }, [required, onSelect, getDefaultOptions]);
 
   return (
-    <Wrapper role='container'>
+    <Wrapper>
       {Object.entries(options).map((option, i) => {
         const selectedOptions = currentOptions
           ? Object.values(currentOptions as SelectedOptions)
