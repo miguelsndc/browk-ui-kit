@@ -12,12 +12,13 @@ export type ButtonVariants =
   | 'secondary-dark';
 
 type ButtonProps = {
-  label?: string;
+  label: string;
   variant: ButtonVariants;
   circle?: boolean;
   disabled?: boolean;
   loading?: boolean;
   icon?: boolean;
+  wFull?: boolean;
 } & HTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
@@ -26,6 +27,7 @@ export default function Button({
   variant = 'primary',
   disabled = false,
   loading,
+  wFull,
   icon,
   ...rest
 }: ButtonProps) {
@@ -49,10 +51,11 @@ export default function Button({
   return (
     <CtaButton
       variant={variant}
-      {...rest}
       circle={circle}
       disabled={disabled}
       icon={icon}
+      wFull={wFull}
+      {...rest}
     >
       {loading ? <Loader /> : label}
     </CtaButton>

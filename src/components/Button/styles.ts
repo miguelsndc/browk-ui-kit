@@ -5,6 +5,7 @@ type CtaButtonProps = {
   variant: ButtonVariants;
   circle?: boolean;
   icon?: boolean;
+  wFull?: boolean;
 };
 
 export const CtaButton = styled.button<CtaButtonProps>`
@@ -12,18 +13,17 @@ export const CtaButton = styled.button<CtaButtonProps>`
   align-items: center;
   justify-content: center;
 
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   font: ${({ theme }) => theme.fonts.P2RegularRoboto};
 
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 
   :focus {
     outline-style: auto;
     outline-color: transparent;
   }
-
-  cursor: pointer;
 
   ${({ circle }) =>
     circle &&
@@ -38,6 +38,13 @@ export const CtaButton = styled.button<CtaButtonProps>`
       height: 2.75rem;
       padding: 0.25rem;
       font-size: 0;
+    `}
+
+  ${({ wFull }) =>
+    wFull &&
+    css`
+      display: block;
+      width: 100%;
     `}
 
   ${({ variant }) => variant === 'primary' && Primary}

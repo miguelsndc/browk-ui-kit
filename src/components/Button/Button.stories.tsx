@@ -5,6 +5,17 @@ import Button from './index';
 export default {
   title: 'Components/Button',
   component: Button,
+  argTypes: {
+    variant: [
+      'primary',
+      'primary-white',
+      'secondary',
+      'secondary-white',
+      'flat',
+      'flat-white',
+      'secondary-dark',
+    ],
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
@@ -21,14 +32,14 @@ PrimaryWhite.parameters = {
 };
 
 PrimaryWhite.args = {
+  ...Primary.args,
   variant: 'primary-white',
-  label: 'Click me',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  ...Primary.args,
   variant: 'secondary',
-  label: 'Click me',
 };
 
 export const SecondaryWhite = Template.bind({});
@@ -37,14 +48,14 @@ SecondaryWhite.parameters = {
 };
 
 SecondaryWhite.args = {
+  ...Primary.args,
   variant: 'secondary-white',
-  label: 'Click me',
 };
 
 export const Flat = Template.bind({});
 Flat.args = {
+  ...Primary.args,
   variant: 'flat',
-  label: 'Click me',
 };
 
 export const FlatWhite = Template.bind({});
@@ -52,12 +63,12 @@ FlatWhite.parameters = {
   backgrounds: { default: 'primary' },
 };
 FlatWhite.args = {
+  ...Primary.args,
   variant: 'flat-white',
-  label: 'Click me',
 };
 
 export const SecondaryDark = Template.bind({});
 SecondaryDark.args = {
+  ...Primary.args,
   variant: 'secondary-dark',
-  label: 'Click me',
 };
