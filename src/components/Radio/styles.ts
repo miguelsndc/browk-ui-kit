@@ -4,8 +4,9 @@ export const Wrapper = styled.label`
   font: ${({ theme }) => theme.fonts.P2RegularRoboto};
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
   position: relative;
+  cursor: pointer;
 
   input {
     width: 0;
@@ -24,6 +25,12 @@ export const Wrapper = styled.label`
     :hover {
       opacity: 0.6;
     }
+  }
+
+  input:disabled + .select-box {
+    opacity: 0.1;
+    cursor: auto;
+    pointer-events: none;
   }
 
   :focus-within .select-box {

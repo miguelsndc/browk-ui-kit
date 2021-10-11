@@ -6,13 +6,14 @@ type RadioProps = {
   selected: boolean;
   onChange: Dispatch<SetStateAction<boolean>>;
   label: string;
+  disabled?: boolean;
 };
 
 export default function Radio({
   selected,
   label,
   onChange,
-  ...rest
+  disabled,
 }: RadioProps) {
   function handleChange() {
     onChange(prevState => !prevState);
@@ -21,10 +22,10 @@ export default function Radio({
   return (
     <Wrapper>
       <input
-        {...rest}
         type='radio'
         checked={selected}
         onChange={handleChange}
+        disabled={disabled}
       />
       <div className='select-box'>
         {selected && <div className='selected'></div>}
