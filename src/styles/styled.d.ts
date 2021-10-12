@@ -21,6 +21,7 @@ declare module 'styled-components' {
       superRed: string;
       green: string;
       blue: string;
+      primaryDisabled: string;
     };
     fonts: {
       BlackHeading1: string;

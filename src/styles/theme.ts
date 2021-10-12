@@ -18,6 +18,7 @@ export const theme = {
     superRed: '#DB524E',
     green: '#27ae60',
     blue: '#428bf9',
+    primaryDisabled: '#E3DAF9',
   },
   fonts: {
     BlackHeading1: "normal 900 3.5rem/4rem 'Montserrat', sans-serif",
