@@ -5,12 +5,12 @@ type ProgressBarProps = {
 };
 
 export const Wrapper = styled.article`
-  box-shadow: ${({ theme }) => theme.shadows.default};
-  font: ${({ theme }) => theme.fonts.P2RegularRoboto};
-  border-radius: 8px;
-  max-width: 400px;
-  width: 100%;
   position: relative;
+  width: 100%;
+  max-width: 400px;
+  font: ${({ theme }) => theme.fonts.P2RegularRoboto};
+  box-shadow: ${({ theme }) => theme.shadows.default};
+  border-radius: 8px;
 `;
 
 export const ProgressBar = styled.div<ProgressBarProps>`
@@ -41,7 +41,6 @@ export const BannerOverlay = styled.div`
   left: 0;
   right: 0;
   height: 134px;
-  background: rgb(255, 255, 255);
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -95,6 +94,7 @@ export const Info = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
 
   div {
     display: flex;

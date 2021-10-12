@@ -190,6 +190,7 @@ const SecondaryWhiteVariantStyles = css`
 const FlatVariantStyles = css`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.primary};
+  padding: 0.85rem 1.65rem;
 
   transition: all 0.2s;
 
@@ -220,6 +221,8 @@ const FlatVariantStyles = css`
 const FlatWhiteVariantStyles = css`
   background: transparent;
   color: ${({ theme }) => theme.colors.white};
+  padding: 0.85rem 1.65rem;
+
   transition: all 0.2s;
 
   svg path {
