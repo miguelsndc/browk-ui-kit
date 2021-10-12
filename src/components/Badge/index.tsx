@@ -1,8 +1,10 @@
 import { Wrapper } from './styles';
 
+export type BadgeVariants = 'white' | 'primary' | 'secondary';
+
 type BadgeProps = {
   text: string;
-  variant: 'white' | 'primary' | 'secondary';
+  variant: BadgeVariants;
 };
 
 export default function Badge({ text, variant = 'primary' }: BadgeProps) {

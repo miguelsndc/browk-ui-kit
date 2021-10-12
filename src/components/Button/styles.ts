@@ -8,6 +8,27 @@ type CtaButtonProps = {
   wFull?: boolean;
 };
 
+function handleButtonVariants(variant: ButtonVariants) {
+  switch (variant) {
+    case 'primary':
+      return PrimaryVariantStyles;
+    case 'primary-white':
+      return PrimaryWhiteVariantStyles;
+    case 'secondary':
+      return SecondaryVariantStyles;
+    case 'secondary-white':
+      return SecondaryWhiteVariantStyles;
+    case 'flat':
+      return FlatVariantStyles;
+    case 'flat-white':
+      return FlatWhiteVariantStyles;
+    case 'secondary-dark':
+      return SecondaryDarkVariantStyles;
+    default:
+      return PrimaryVariantStyles;
+  }
+}
+
 export const CtaButton = styled.button<CtaButtonProps>`
   display: flex;
   align-items: center;
@@ -47,16 +68,10 @@ export const CtaButton = styled.button<CtaButtonProps>`
       width: 100%;
     `}
 
-  ${({ variant }) => variant === 'primary' && Primary}
-  ${({ variant }) => variant === 'primary-white' && PrimaryWhite}
-  ${({ variant }) => variant === 'secondary' && Secondary}
-  ${({ variant }) => variant === 'secondary-white' && SecondaryWhite}
-  ${({ variant }) => variant === 'flat' && Flat}
-  ${({ variant }) => variant === 'flat-white' && FlatWhite}
-  ${({ variant }) => variant === 'secondary-dark' && SecondaryDark}
+  ${({ variant }) => handleButtonVariants(variant)}
 `;
 
-const Primary = css`
+const PrimaryVariantStyles = css`
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.white};
 
@@ -86,7 +101,7 @@ const Primary = css`
   }
 `;
 
-const PrimaryWhite = css`
+const PrimaryWhiteVariantStyles = css`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.primary};
 
@@ -112,7 +127,7 @@ const PrimaryWhite = css`
   }
 `;
 
-const Secondary = css`
+const SecondaryVariantStyles = css`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.primary};
   border: 3px solid ${({ theme }) => theme.colors.primary};
@@ -142,7 +157,7 @@ const Secondary = css`
   }
 `;
 
-const SecondaryWhite = css`
+const SecondaryWhiteVariantStyles = css`
   background: transparent;
   color: ${({ theme }) => theme.colors.white};
   border: 3px solid ${({ theme }) => theme.colors.white};
@@ -172,7 +187,7 @@ const SecondaryWhite = css`
   }
 `;
 
-const Flat = css`
+const FlatVariantStyles = css`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.primary};
 
@@ -202,7 +217,7 @@ const Flat = css`
   }
 `;
 
-const FlatWhite = css`
+const FlatWhiteVariantStyles = css`
   background: transparent;
   color: ${({ theme }) => theme.colors.white};
   transition: all 0.2s;
@@ -230,7 +245,8 @@ const FlatWhite = css`
     cursor: auto;
   }
 `;
-const SecondaryDark = css`
+
+const SecondaryDarkVariantStyles = css`
   background: transparent;
   border: 3px solid ${({ theme }) => theme.colors.black};
   transition: all 0.2s;

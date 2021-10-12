@@ -1,8 +1,22 @@
 import styled, { css } from 'styled-components';
+import { BadgeVariants } from '.';
 
 type WrapperProps = {
-  variant: 'white' | 'primary' | 'secondary';
+  variant: BadgeVariants;
 };
+
+function handleBadgeVariants(variant: BadgeVariants) {
+  switch (variant) {
+    case 'white':
+      return WhiteVariantStyles;
+    case 'primary':
+      return PrimaryVariantStyles;
+    case 'secondary':
+      return SecondaryVariantStyles;
+    default:
+      return PrimaryVariantStyles;
+  }
+}
 
 export const Wrapper = styled.div<WrapperProps>`
   padding: 2px 0.7rem;
@@ -11,9 +25,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
   font: ${({ theme }) => theme.fonts.P3RegularRobotoBold};
 
-  ${({ variant }) => variant === 'white' && WhiteVariantStyles}
-  ${({ variant }) => variant === 'primary' && PrimaryVariantStyles}
-  ${({ variant }) => variant === 'secondary' && SecondaryVariantStyles};
+  ${({ variant }) => handleBadgeVariants(variant)}
 `;
 
 const WhiteVariantStyles = css`
