@@ -18,6 +18,7 @@ const Template: ComponentStory<typeof TextInput> = args => {
     />
   );
 };
+
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Your name',
