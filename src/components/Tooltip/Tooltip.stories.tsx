@@ -22,4 +22,5 @@ const Template: ComponentStory<typeof Tooltip> = args => <Tooltip {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   text: 'Your text',
+  position: 'bottom-left',
 };
