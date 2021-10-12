@@ -13,23 +13,31 @@ export const Wrapper = styled.article`
   border-radius: 8px;
 `;
 
+export const ProgressText = styled.span`
+  position: absolute;
+  left: 1rem;
+  top: 0.15rem;
+  color: ${({ theme }) => theme.colors.white};
+  font: ${({ theme }) => theme.fonts.P3RegularRoboto};
+  z-index: 9;
+`;
+
 export const ProgressBar = styled.div<ProgressBarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${({ progress }) => `${progress}%`};
+  width: ${({ progress }) => `${progress > 100 ? 100 : progress}%`};
   height: 1.5rem;
 
   display: flex;
   align-items: center;
 
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   border-top-left-radius: 8px;
   background-color: ${({ theme }) => theme.colors.green};
   font: ${({ theme }) => theme.fonts.P3RegularRoboto};
-  border-top-right-radius: ${({ progress }) => (progress === 100 ? '8px' : 0)};
+  border-top-right-radius: ${({ progress }) => (progress >= 100 ? '8px' : 0)};
 
-  padding-left: 1rem;
   transition: all 0.2s;
 
   z-index: 3;

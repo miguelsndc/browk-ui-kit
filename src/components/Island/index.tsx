@@ -7,6 +7,7 @@ import {
   Info,
   LinkWrapper,
   BannerOverlay,
+  ProgressText,
 } from './styles';
 
 import { ReactComponent as LessonIcon } from '../../assets/literature.svg';
@@ -44,7 +45,10 @@ export default function Island({
   return (
     <Wrapper>
       {progress > 0 && (
-        <ProgressBar progress={progress}>Progress: {progress}%</ProgressBar>
+        <>
+          <ProgressBar progress={progress}></ProgressBar>
+          <ProgressText>Progress: {progress}%</ProgressText>
+        </>
       )}
       <BannerOverlay></BannerOverlay>
       <Banner src={bannerUrl} alt={`${author.name} banner`} />
