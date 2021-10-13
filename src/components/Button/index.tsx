@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { useTheme } from 'styled-components';
 import { CtaButton } from './styles';
 
@@ -12,7 +12,7 @@ export type ButtonVariants =
   | 'secondary-dark';
 
 type ButtonProps = {
-  label: string;
+  children: ReactNode;
   variant: ButtonVariants;
   circle?: boolean;
   disabled?: boolean;
@@ -22,7 +22,7 @@ type ButtonProps = {
 } & HTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
-  label,
+  children,
   circle,
   variant = 'primary',
   disabled = false,
@@ -57,7 +57,7 @@ export default function Button({
       wFull={wFull}
       {...rest}
     >
-      {loading ? <Loader /> : label}
+      {loading ? <Loader /> : children}
     </CtaButton>
   );
 }

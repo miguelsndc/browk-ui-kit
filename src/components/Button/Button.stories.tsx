@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  label: 'Click me',
+  children: 'Click me',
 };
 
 export const PrimaryWhite = Template.bind({});

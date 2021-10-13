@@ -132,6 +132,7 @@ const SecondaryVariantStyles = css`
   color: ${({ theme }) => theme.colors.primary};
   border: 3px solid ${({ theme }) => theme.colors.primary};
   transition: all 0.2s;
+  padding: 0.6rem 1.5rem;
 
   svg path {
     fill: ${({ theme }) => theme.colors.primary};

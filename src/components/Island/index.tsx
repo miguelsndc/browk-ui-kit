@@ -74,10 +74,10 @@ export default function Island({
         </Info>
         <LinkWrapper>
           <a href={continueToUrl}>
-            <Button label='Continue' variant='secondary' />
+            <Button variant='secondary'>Continue</Button>
           </a>
           <a href={moreUrl}>
-            <Button label='More' variant='flat' />
+            <Button variant='flat'>More</Button>
           </a>
         </LinkWrapper>
       </Details>
