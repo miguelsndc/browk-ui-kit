@@ -1,4 +1,4 @@
-import { Wrapper, IconWrapper } from './styles';
+import { Wrapper, IconWrapper, Overlay } from './styles';
 import { Button } from '../../components';
 
 import { ReactComponent as SuccessIcon } from '../../assets/checked.svg';
@@ -50,20 +50,23 @@ export default function Popup({
   }
 
   return (
-    <Wrapper>
-      <Button circle icon variant='primary' onClick={onClose}>
-        <CloseIcon />
-      </Button>
-      <IconWrapper type={icon}>
-        {icon === 'error' && <CloseIcon />}
-        {icon === 'success' && <SuccessIcon />}
-        {icon === 'warning' && <WarningIcon />}
-      </IconWrapper>
-      <h2>{head}</h2>
-      <p>{description}</p>
-      <div>
-        <PopupButtons />
-      </div>
-    </Wrapper>
+    <>
+      <Overlay onClick={onClose}></Overlay>
+      <Wrapper>
+        <Button circle icon variant='primary' onClick={onClose}>
+          <CloseIcon />
+        </Button>
+        <IconWrapper type={icon}>
+          {icon === 'error' && <CloseIcon />}
+          {icon === 'success' && <SuccessIcon />}
+          {icon === 'warning' && <WarningIcon />}
+        </IconWrapper>
+        <h2>{head}</h2>
+        <p>{description}</p>
+        <div>
+          <PopupButtons />
+        </div>
+      </Wrapper>
+    </>
   );
 }

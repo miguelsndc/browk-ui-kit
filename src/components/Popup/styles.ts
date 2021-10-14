@@ -54,9 +54,15 @@ export const Wrapper = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.default};
   border-radius: 8px;
   font: ${({ theme }) => theme.fonts.P2RegularRoboto};
+  background: ${({ theme }) => theme.colors.white};
   text-align: center;
-  position: relative;
   padding: 1.5rem 0;
+  z-index: 99;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   h2 {
     font: ${({ theme }) => theme.fonts.H4BoldMontserrat};
@@ -96,4 +102,12 @@ export const IconWrapper = styled.div<IconWrapperProps>`
   }
 
   ${({ type }) => handleIconWrapperTypeStyles(type)}
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 98;
 `;
