@@ -5,10 +5,12 @@ import '@storybook/addon-console';
 import { GlobalStyles } from '../src/styles/globals';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/styles/theme';
+import { Toaster } from 'react-hot-toast';
 
 export const decorators = [
   Story => (
     <ThemeProvider theme={theme}>
+      <Toaster />
       <GlobalStyles />
       <Story />
     </ThemeProvider>
