@@ -1,4 +1,11 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {
+  DetailedHTMLProps,
+  Dispatch,
+  HTMLAttributes,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
 import { Wrapper, Option } from './styles';
 
 import checkedIcon from '../../assets/checked.svg';
@@ -9,12 +16,12 @@ type ContextMenuProps = {
   currentOption: string | null;
   required: boolean;
   options: Option[];
-  onSelect: Dispatch<SetStateAction<Option | null>>;
-};
+  onSelectOption: (option: string | null) => void;
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export default function ContextMenu({
   options,
-  onSelect,
+  onSelectOption,
   required,
   currentOption,
 }: ContextMenuProps) {
@@ -22,15 +29,15 @@ export default function ContextMenu({
     const selectedOption = options[i];
 
     if (!required && selectedOption === currentOption) {
-      onSelect(null);
+      onSelectOption(null);
       return;
     }
 
-    onSelect(selectedOption);
+    onSelectOption(selectedOption);
   }
 
   useEffect(() => {
-    required && onSelect(currentOption || options[0]);
+    required && onSelectOption(currentOption || options[0]);
   }, [required]);
 
   return (

@@ -11,7 +11,11 @@ const Template: ComponentStory<typeof ContextMenu> = args => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <ContextMenu {...args} onSelect={setSelected} currentOption={selected} />
+    <ContextMenu
+      {...args}
+      onSelectOption={setSelected}
+      currentOption={selected}
+    />
   );
 };
 

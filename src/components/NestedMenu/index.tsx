@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import { Wrapper, Option, Label } from './styles';
 
 import checkedIcon from '../../assets/checked.svg';
@@ -15,7 +15,7 @@ type NestedMenuProps = {
   currentOptions: SelectedOptions | null;
   required?: boolean;
   options: Options;
-  onSelect: Dispatch<SetStateAction<SelectedOptions | null>>;
+  onSelect: (options: SelectedOptions | null) => void;
 };
 
 export default function NestedMenu({
