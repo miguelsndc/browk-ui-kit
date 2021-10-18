@@ -10,6 +10,4 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font: ${({ theme }) => theme.fonts.P2RegularRoboto};
   }
-
-
 `;
