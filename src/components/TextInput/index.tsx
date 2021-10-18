@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, InputHTMLAttributes, useState } from 'react';
+import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 import { InputBox, Wrapper } from './styles';
 
