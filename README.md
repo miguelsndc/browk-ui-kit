@@ -11,6 +11,7 @@ Take a look at the hosted project [here](https://6164774f432769004a67b74d-xvgjsf
 Here's what i learned:
 
 - What is and how to use Storybook
+- Use Chromatic to deploy Storybook
 
 ### Built With
 
@@ -34,24 +35,21 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Create a project in [Firebase](https://firebase.google.com/?hl=pt-br) in test mode.
-2. Add a Web APP to your firebase project
-3. Clone the repo
+1. Clone the repo
     
     ```
-    git clone <https://github.com/miguelsndc/Firebase-Auth>
+    git clone <https://github.com/miguelsndc/browk-ui-kit>
     
     ```
     
-4. Create a .env.local file and populate it with the firebase configs of your web app.
-5. Install NPM packages
+2. Install NPM packages
     
     ```
     npm install // yarn
     
     ```
     
-6. Start the project
+3. Start the project
     
     ```
     npm start // yarn start
@@ -83,4 +81,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Miguel Nogueira - [Linkedin](https://www.linkedin.com/in/miguel-nogueira-a5a28a1b5/) - [mglsndc@gmail.com](mailto:mglsndc@gmail.com)
 
-Project Link: [firebase-auth-murex.vercel.app](https://www.notion.so/firebase-auth-murex.vercel.app)
+Project Link: [Live Project Here](https://6164774f432769004a67b74d-xvgjsfipzy.chromatic.com/)
