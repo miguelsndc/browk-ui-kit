@@ -2,8 +2,6 @@
 
 ## About The Project
 
-### !! Project is still under development !!
-
 As a quite new frontend developer, i'm used to build a project from the ground up, but that's not how things work in a real work environment. That's why i decided to learn Storybook, a awesome tool that help us fronties build, test and validate ui components in isolation, which really makes the job easier. As a real world tool, i believe that the knowledge i acquired now will help me a lot in the future.
 
 Take a look at the hosted project [here](https://6164774f432769004a67b74d-xvgjsfipzy.chromatic.com/), i'm updating it constantly.
@@ -38,7 +36,7 @@ This is an example of how to list things you need to use the software and how to
 1. Clone the repo
     
     ```
-    git clone <https://github.com/miguelsndc/browk-ui-kit>
+    git clone <https://github.com/miguelsndc/browk-ui-kit.git>
     
     ```
     
@@ -52,7 +50,7 @@ This is an example of how to list things you need to use the software and how to
 3. Start the project
     
     ```
-    npm start // yarn start
+    npm run storybook // yarn storybook
     
     ```
     
